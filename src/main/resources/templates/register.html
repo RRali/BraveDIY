@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+        lang="en"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org"
+>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Brave DIY</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
-<!-- form itself end-->
-<form id="test-form2" class="white-popup-block mfp-hide">
+<main>
+
+<!--<form id="test-form2" class="white-popup-block mfp-hide">-->
     <div class="popup_box ">
         <div class="popup_inner">
             <div class="logo text-center">
@@ -14,20 +27,24 @@
                     <img src="img/logo.png" alt="">
                 </a>
             </div>
-            <h3>Registration</h3>
-            <form action="/register" method="post">
-                <div class="row">
+            <h3 class="text-center" >Registration</h3>
+            <form th:action="@{/register}" method="post"  >
+                <div class="row text-center">
                     <div class="col-xl-12 col-md-12">
-                        <input type="username" placeholder="Username">
+<!--                        <input type="username" placeholder="Username">-->
+                        <input placeholder="Username" type="text" class="form-control" id="username" name="username"/>
                     </div>
                     <div class="col-xl-12 col-md-12">
-                        <input type="email" placeholder="Enter email">
+<!--                        <input type="email" placeholder="Enter email">-->
+                        <input placeholder="Enter email" type="email" class="form-control" id="email" name="email"/>
                     </div>
                     <div class="col-xl-12 col-md-12">
-                        <input type="password" placeholder="Password">
+<!--                        <input type="password" placeholder="Password">-->
+                        <input placeholder="Password" type="password" class="form-control" id="password" name="password"/>
                     </div>
                     <div class="col-xl-12 col-md-12">
-                        <input type="Password" placeholder="Confirm password">
+<!--                        <input type="Password" placeholder="Confirm password">-->
+                        <input placeholder="Confirm password" class="form-control" type="password" id="confirmPassword" name="confirmPassword"/>
                     </div>
                     <div class="col-xl-12">
                         <button type="submit" class="boxed_btn_orange">Sign Up</button>
@@ -36,7 +53,9 @@
             </form>
         </div>
     </div>
-</form>
-<!-- form itself end -->
+<!--</form>-->
 
+</main>
+</body>
 </html>
+
