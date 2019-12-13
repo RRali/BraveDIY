@@ -1,20 +1,20 @@
 package rali.org.bravediy.web.controllers.base;
 
+import org.springframework.web.servlet.ModelAndView;
 
+public abstract class BaseController {
 
-import rali.org.bravediy.services.models.auth.LoginUserServiceModel;
+    public ModelAndView view(String viewName, ModelAndView modelAndView) {
+        modelAndView.setViewName(viewName);
 
-import javax.servlet.http.HttpSession;
-
-public class BaseController {
-    protected boolean isAuthenticated(HttpSession session) {
-        return session.getAttribute("user") != null;
+        return modelAndView;
     }
 
-    protected String getUsername(HttpSession session) {
-        return ((LoginUserServiceModel) session.getAttribute("user")).getUsername();
+    public ModelAndView view(String viewName) {
+        return this.view(viewName, new ModelAndView());
     }
-    protected String getName(HttpSession session) {
-        return ((LoginUserServiceModel) session.getAttribute("user")).getName();
+
+    public ModelAndView redirect(String url) {
+        return this.view("redirect:" + url);
     }
 }

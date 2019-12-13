@@ -1,0 +1,68 @@
+<header>
+    <div class="header-area breadcam_bg ">
+        <div id="sticky-header" class="main-header-area">
+            <div class="container-fluid p-0">
+                <div class="row align-items-center no-gutters">
+                    <div class="col-xl-2 col-lg-3">
+                        <div class="logo-img">
+                            <a th:href="@{/}">
+                                <img src="img/logo.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <th:block sec:authorize="isAnonymous()">
+                    <div class="col-xl-8 col-lg-8">
+                        <div class="main-menu  d-none d-lg-block">
+
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a class="active" th:href="@{/}">home</a></li>
+                                        <li><a th:href="@{basic_skills}">Basic Skills</a></li>
+                                        <li><a th:href="@{Courses}">Courses</a></li>
+                                        <li><a th:href="@{Courses}">Can you do it</a></li>
+
+                                    </ul>
+                                </nav>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 d-none d-lg-block">
+                        <div class=" log_chat_area d-flex align-items-center">
+                            <a class="nav-link text-white " th:href="@{/users/login}">Login</a>
+                            <a class="nav-link text-white " th:href="@{/users/register}">Register</a>
+                        </div>
+                    </div>
+                    </th:block>
+                    <th:block sec:authorize="isAuthenticated()">
+                        <div class="col-xl-8 col-lg-8">
+                            <div class="main-menu  d-none d-lg-block">
+
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a class="active" th:href="@{/}">home</a></li>
+                                        <li><a th:href="@{basic_skills}">Basic Skills</a></li>
+                                        <li><a th:href="@{Courses}">Courses</a></li>
+                                        <li><a th:href="@{Courses}">Can you do it</a></li>
+                                        <li><a th:href="@{single-blog}">Forum</a></li>
+                                        <li><a th:href="@{Courses}">Shop</a></li>
+                                    </ul>
+                                </nav>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 d-none d-lg-block">
+                            <div class=" log_chat_area d-flex align-items-center">
+
+                                    <form action="/logout?login" method="post">
+                                        <button class="logout-button nav-link">Logout</button>
+                                    </form>
+
+                            </div>
+                        </div>
+                    </th:block>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
